@@ -23,6 +23,7 @@ suppressPackageStartupMessages({
 })
 
 out_dir <- "outputs"
+dir.create(out_dir, showWarnings = FALSE, recursive = TRUE)
 ps <- readRDS(file.path(out_dir, "phyloseq.rds"))
 
 # named palette straight from the authors' metadata, ordered by propagation stage
@@ -34,8 +35,7 @@ palette <- setNames(pal$RGBcol, pal$Name)
 alpha <- estimate_richness(ps, measures = c("Observed", "Shannon"))
 alpha <- alpha %>% rownames_to_column("id_samples") %>%
   mutate(id_samples = gsub("^X", "", id_samples)) %>%
-  left_join(data.frame(sample_data(ps)) %>% rownames_to_column("id_samples"),
-            by = "id_samples")
+  left_join(data.frame(sample_data(ps)), by = "id_samples")
 
 write.csv(alpha[, c("id_samples", "Name", "Observed", "Shannon")],
           file.path(out_dir, "alpha_diversity.csv"), row.names = FALSE)

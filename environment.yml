@@ -3,4 +3,13 @@ channels:
   - conda-forge
   - bioconda
 dependencies:
+  # R itself (RStudio is provided by the Renku session image; see
+  # R_bioconductor_NCCR_microbiomes/Dockerfile in the sibling project) plus
+  # every CRAN/Bioconductor package the analysis/ scripts import.
   - r-base>=4.3
+  - r-data.table   # 00_get_data.R / 01_build_phyloseq.R
+  - r-tibble       # 01_build_phyloseq.R, 02_diversity_ordination.R
+  - r-dplyr        # 02_diversity_ordination.R
+  - r-ggplot2      # 02_diversity_ordination.R
+  - r-patchwork    # 02_diversity_ordination.R
+  - bioconductor-phyloseq  # 01_build_phyloseq.R, 02_diversity_ordination.R

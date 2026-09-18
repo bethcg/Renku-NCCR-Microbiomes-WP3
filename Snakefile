@@ -9,6 +9,14 @@ rule all:
         "outputs/figure_diversity_ordination.png",
         "outputs/alpha_diversity.csv"
 
+rule get_data:
+    output:
+        "data/asv_counts.txt",
+        "data/taxonomy.txt",
+        "data/metadata.txt"
+    shell:
+        "Rscript analysis/00_get_data.R"
+
 rule build_phyloseq:
     input:
         counts   = "data/asv_counts.txt",
