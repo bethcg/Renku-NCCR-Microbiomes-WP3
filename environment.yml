@@ -4,13 +4,3 @@ channels:
   - bioconda
 dependencies:
   - r-base>=4.3
-  - r-tidyverse          # dplyr, ggplot2, tibble, readr, ...
-  - r-data.table
-  - r-ape
-  - r-vegan              # ecological distances / ordination
-  - r-patchwork          # compose the multi-panel figure
-  - bioconductor-phyloseq
-  # --- optional: pipeline orchestration (see Snakefile) ---
-  - snakemake-minimal
-  # --- optional: interactive editing if you use a Jupyter/VS Code session ---
-  - r-irkernel
