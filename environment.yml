@@ -13,3 +13,4 @@ dependencies:
   - r-ggplot2      # 02_diversity_ordination.R
   - r-patchwork    # 02_diversity_ordination.R
   - bioconductor-phyloseq  # 01_build_phyloseq.R, 02_diversity_ordination.R
+  - snakemake-minimal      # runs the Snakefile pipeline (optional, see README)
