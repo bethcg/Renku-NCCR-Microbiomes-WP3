@@ -36,6 +36,9 @@ Zenodo **10.5281/zenodo.14514438** · CC-BY-4.0. See `data/README.md`.
 and to run the pipeline, so the environment is identical on a
 laptop, in CI, and on RenkuLab.
 
+Alternatively, create it within the session through: `conda env create -f environment.yml`
+Activate it via: `conda activate r-bio-env`
+
 ## Run it
 
 **On RenkuLab (the demo path):** open the project → start the RStudio session →
