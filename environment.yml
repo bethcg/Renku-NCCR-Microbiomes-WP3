@@ -9,6 +9,7 @@ dependencies:
   - r-ape
   - r-vegan              # ecological distances / ordination
   - r-patchwork          # compose the multi-panel figure
+  - bioconductor-phyloseq
   # --- optional: pipeline orchestration (see Snakefile) ---
   - snakemake-minimal
   # --- optional: interactive editing if you use a Jupyter/VS Code session ---
